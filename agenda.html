@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجندة ورشة النماذج</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            padding: 0;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+        }
+        
+        .page {
+            width: 100%;
+            height: 100%;
+            padding: 15mm 20mm;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 5mm;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 4mm;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            color: #2c3e50;
+            margin-bottom: 2mm;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            font-size: 11pt;
+            color: #7f8c8d;
+            margin-bottom: 2mm;
+        }
+        
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 8mm;
+            margin-top: 2mm;
+            font-size: 9pt;
+            color: #2c3e50;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+        
+        .meta-item strong {
+            color: #e74c3c;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-right: 7mm;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 2.5mm;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e74c3c;
+        }
+        
+        .module {
+            position: relative;
+            margin-bottom: 3.5mm;
+            padding-right: 10mm;
+        }
+        
+        .module::before {
+            content: '';
+            position: absolute;
+            right: 1.5mm;
+            top: 1.5mm;
+            width: 6px;
+            height: 6px;
+            background: #e74c3c;
+            border: 2px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px #e74c3c;
+        }
+        
+        .module-number {
+            position: absolute;
+            right: -1.5mm;
+            top: -0.5mm;
+            width: 10mm;
+            height: 10mm;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 9pt;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .module-content {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-right: 2px solid #e74c3c;
+            padding: 2mm 3mm;
+            border-radius: 1.5mm;
+        }
+        
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1mm;
+        }
+        
+        .module-title {
+            font-size: 9.5pt;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .module-time {
+            font-size: 8pt;
+            color: white;
+            background: #2c3e50;
+            padding: 0.5mm 2.5mm;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        
+        .module-desc {
+            font-size: 8pt;
+            color: #7f8c8d;
+            line-height: 1.3;
+        }
+        
+        /* Sessions */
+        .session-divider {
+            text-align: center;
+            margin: 4mm 0 4mm 10mm;
+            position: relative;
+        }
+        
+        .session-divider::before,
+        .session-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 35%;
+            height: 1px;
+            background: #dee2e6;
+        }
+        
+        .session-divider::before {
+            right: 0;
+        }
+        
+        .session-divider::after {
+            left: 0;
+        }
+        
+        .session-label {
+            display: inline-block;
+            background: white;
+            padding: 0 3mm;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        /* Break */
+        .break {
+            text-align: center;
+            padding: 2mm;
+            background: #2c3e50;
+            color: white;
+            border-radius: 1.5mm;
+            margin: 3mm 0 3mm 10mm;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 12mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            padding-top: 2mm;
+            border-top: 2px solid #e74c3c;
+            font-size: 8pt;
+            color: #7f8c8d;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .page {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <h1>ورشة النماذج</h1>
+            <p class="subtitle">مفهوم Templates في التصميم التعليمي التفاعلي</p>
+           
+        </div>
+        
+        <!-- Timeline -->
+        <div class="timeline">
+            
+            
+            <!-- Module 1 -->
+            <div class="module">
+                <div class="module-number">1</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">المقدمة وتحديد المشكلة</div>
+                        <div class="module-title"> Introduction and Problem Definition</div>
+                        <div class="module-time">10 د</div>
+                    </div>
+                    <div class="module-desc">الوضع الحالي والوقت المهدر</div>
+                </div>
+            </div>
+            
+            <!-- Module 2 -->
+            <div class="module">
+                <div class="module-number">2</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">تعريف النماذج ومفهومها</div>
+                        <div class="module-title">Defining Templates and Their Concept</div>
+                        <div class="module-time">15 د</div>
+                    </div>
+                    <div class="module-desc">المفهوم والمكونات الأساسية</div>
+                </div>
+            </div>
+            
+            <!-- Module 3 -->
+              <div class="module">
+                <div class="module-number">3</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">أمثلة واقعية</div>
+                        <div class="module-title">Real-World Examples</div>
+                        <div class="module-time">15 د</div>
+                    </div>
+                    <div class="module-desc">عرض حي من المنصات</div>
+                </div>
+            </div>
+           
+            
+            <!-- Module 4 -->
+              <div class="module">
+                <div class="module-number">4</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">كيفية استخدام النماذج</div>
+                        <div class="module-title">How to Use Templates</div>
+                        <div class="module-time">10 د</div>
+                    </div>
+                    <div class="module-desc">الخطوات العملية للتطبيق</div>
+                </div>
+            </div>
+           
+            
+            <!-- Module 5 -->
+         
+              <div class="module">
+                <div class="module-number">5</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">مميزات النماذج</div>
+                        <div class="module-title">Templates Advantages</div>
+                        <div class="module-time">10 د</div>
+                    </div>
+                    <div class="module-desc">الفوائد والتوفير الحقيقي</div>
+                </div>
+            </div>
+            
+       
+            
+            <!-- Module 6 -->
+            <div class="module">
+                <div class="module-number">6</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">عقلية النماذج أثناء التحليل</div>
+                        <div class="module-title"> Template Mindset During Analysis</div>
+                        <div class="module-time">15 د</div>
+                    </div>
+                    <div class="module-desc">التفكير: هل نموذج؟</div>
+                </div>
+            </div>
+            
+            <!-- Module 7 -->
+            <div class="module">
+                <div class="module-number">7</div>
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">ابتكار نماذج جديدة</div>
+                        <div class="module-title">Creating New Templates</div>
+                        <div class="module-time">15 د</div>
+                    </div>
+                    <div class="module-desc">الإبداع وكتابة المواصفات</div>
+                </div>
+            </div>
+            
+            <!-- Module 8 -->
+            <div class="module">
+                <div class="module-number">8</div>
+             <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">متى نحتاج ستوري بورد؟</div>
+                        <div class="module-title"> When Do We Need Storyboard?</div>
+                        <div class="module-time">7 د</div>
+                    </div>
+                    <div class="module-desc">الحالات الضرورية وغير الضرورية</div>
+                </div>
+            </div>
+            
+            <!-- Module 9 -->
+            <div class="module">
+                <div class="module-number">9</div>
+               
+                 <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">أنواع المدخلات والنماذج</div>
+                        <div class="module-title">Input Types with Template Types</div>
+                        <div class="module-time">10 د</div>
+                    </div>
+                    <div class="module-desc">العلاقة بين النوع والبيانات</div>
+                </div>
+            </div>
+            
+            <!-- Module 10 -->
+            <div class="module">
+                <div class="module-number">10</div>
+                
+                <div class="module-content">
+                    <div class="module-header">
+                        <div class="module-title">فقرة الأسئلة</div>
+                        <div class="module-title">Questions</div>
+                        <div class="module-time">5 د</div>
+                    </div>
+                    <div class="module-desc">الملخص وخطط العمل</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            🎯 فريق ما سكة | ورشة عمل النماذج في التصميم التعليمي
+        </div>
+    </div>
+</body>
+</html>
