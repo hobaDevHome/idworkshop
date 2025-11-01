@@ -1,0 +1,52 @@
+{
+  "language": "en",
+  "background": "img/bg1.png",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mom and I went to the mall.",
+      "imgSrc": "img/01.png",
+      "answers": ["She", "We"],
+      "correctAnswer": "We"
+    },
+    {
+      "id": 2,
+      "question": "Gran likes reading.",
+      "imgSrc": "img/02.png",
+      "answers": ["He", "She", "It", "They"],
+      "correctAnswer": "She"
+    },
+    {
+      "id": 3,
+      "question": "Peter and Jack are playing.",
+      "imgSrc": "img/03.png",
+      "answers": ["They", "We", "He"],
+      "correctAnswer": "They"
+    },
+    {
+      "id": 4,
+      "question": "The flask is red.",
+      "imgSrc": "img/04.png",
+      "answers": ["It", "He"],
+      "correctAnswer": "It"
+    },
+    {
+      "id": 5,
+      "question": "Kate is running.",
+      "imgSrc": "img/05.png",
+      "answers": ["She", "They", "It", "He"],
+      "correctAnswer": "She"
+    },
+    {
+      "id": 6,
+      "question": "Mark is tall.",
+      "imgSrc": "img/06.png",
+      "answers": ["They", "It", "He"],
+      "correctAnswer": "He"
+    }
+  ],
+  "finishResult": {
+    "messageEN": "Great job! You finished all questions!",
+    "messageAR": "!أحسنت! لقد أجبت على جميع الأسئلة"
+  }
+}
